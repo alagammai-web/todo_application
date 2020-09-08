@@ -1,0 +1,67 @@
+<!-- <form [formGroup]="todolist" (ngSubmit)="addtodo()">
+     <input type="text" placeholder="Enter Todo"name="todoname" formControlName="todoname">
+     <button type="submit" [disabled]="!todolist">Add</button>
+</form>
+
+<table>
+    <tr>
+<th>Label</th>
+<th>Action</th>
+    </tr>
+    <tr *ngFor="let todo of todos">
+<th>{{todo.label}}</th>
+<th><button click="delete(todo)">Delete</button></th>
+    </tr>
+</table> -->
+
+<div class="col-sm-12 bgcolor">
+
+
+  <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png' ">
+  <br />
+  <input type='file' (change)="onSelectFile($event)" class="filetype">
+
+
+
+
+
+  <h1>Todo List App</h1>
+  <!-- <div class="col-sm-12">
+    <div class="row">
+      <a [routerLink]="'/'">View all</a>
+      <a [routerLink]="'/'">Completed</a>
+    </div>
+  </div> -->
+  <div class="col-md-6 offset-md-3 bgwhite">
+    <div class="col-sm-12">
+      <input type="text" #newTask placeholder="Enter Todo...">
+      <button (click)="add(newTask.value)" class="coral"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    </div>
+    <ul>
+      <li *ngFor="let todo of todolist; let myindex=index">
+        <p>
+          <i class="fa fa-check-circle" aria-hidden="true" (click)="strike1(myindex)" [ngClass]="{'selected': selectedIndex == myindex}">
+            <span>{{todo}}</span>
+          </i>
+          <span class="right">
+            <i class="fa fa-trash" aria-hidden="true" (click)="delete(myindex)"></i>
+          </span>
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- file upload -->
+<!-- <div class="col-md-6 offset-md-3">
+    <h3>Choose File</h3>            
+    <form (ngSubmit)="upload()">
+        <div class="form-group">
+            <input type="file" name="image"  />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div> -->
